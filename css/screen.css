@@ -717,13 +717,22 @@ input::placeholder {
 
 /* Hide the actual input with the class .o-hide-accessible */
 
+/* focussed and active state */
+.c-custom-input-option-hidden:focus + .c-custom-input-option-label .c-custom-input-option,
+.c-custom-input-option-hidden:active + .c-custom-input-option-label .c-custom-input-option {
+    border: 1px solid var(--color-alpha-x-light);
+    box-shadow: var(--focus-shadow);
+
+}
+
+
 /* checked state */
 
 .c-custom-input-option-hidden:checked + .c-custom-input-option-label {
     /*
-        Do magic stuff here, for example:
-        background-color: red;
+    background-color: red;
     */
+    opacity: 1;
 }
 
 .c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__symbol {
@@ -731,7 +740,68 @@ input::placeholder {
         Do magic stuff here, for example:
         fill: blue;
     */
+    opacity: 1;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
 }
+
+
+
+.c-custom-input-option {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--color-neutral-xxx-light);
+    margin-right: 8px;
+    box-shadow: var(--inset-shadow);
+
+}
+
+.c-custom-input-option-hidden {
+
+}
+
+.c-custom-input-option-label {
+    display: flex;
+}
+
+.c-custom-input-option__symbol {
+    opacity: 0;
+}
+
+.c-custom-input-option--checkbox {
+    border-radius: var(--radius);
+    align-items: center;
+    justify-content: center;
+}
+
+.c-custom-input-option--radio {
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.c-custom-input-option--checkbox .c-custom-input-option__symbol {
+    width: 10px;
+    height: 10px;
+    fill: var(--color-alpha);
+    border-radius: 3px;
+}
+
+.c-custom-input-option--radio .c-custom-input-option__symbol {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-alpha);
+    border-radius: 5px;
+
+}
+
+.c-custom-input-option:hover {
+     border-color: #81ADF0;
+}
+
+
 
 /*------------------------------------*\
 #UTILITIES
