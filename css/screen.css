@@ -850,7 +850,7 @@ input::placeholder {
 
 .c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input {
     border-color: #2E77E6;
-    border: 1px solid #81ADF0;
+    border: 1px solid #81ADF0;    
 
 }
 
